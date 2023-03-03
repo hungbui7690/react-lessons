@@ -1,5 +1,6 @@
 /*
-  Updating the State
+  Single Source of Truth
+  - now, we want to have the reset buttons, to reset all the value back to zero
 
   (1) counter[s]
 
