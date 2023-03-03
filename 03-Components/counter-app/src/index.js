@@ -1,5 +1,5 @@
 /*
-  Binding Event Handlers
+  Updating the State
   (1) counter.jsx
 
 */

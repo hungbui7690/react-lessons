@@ -5,9 +5,9 @@ class Counter extends Component {
     count: 0,
   }
 
-  // (***) Another method is to use arrow function
+  // (***) in react, we don't write this.state.count++ to modify state > must use this.setState({})
   handleIncrement = () => {
-    console.log('Increment Clicked', this)
+    this.setState({ count: this.state.count + 1 }) // we cannot use ++ here
   }
 
   render() {
