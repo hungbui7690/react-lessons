@@ -1,20 +1,20 @@
 /*
-  HELLO WORLD!
-  - delete all files in src/
-  - create src/index.js
+  CUSTOM CONFIGS
 
+    package.json
+    > "eject": "react-scripts eject"
+    > npm run eject
+
+      + ? Are you sure you want to eject? This action is permanent. » (y/N) > ONE WAY STREET > choose No > just choose Yes only when we know what we are doing 
+        > After doing this, package.json will show all the dependencies that are package in react-app
+        > also there are many config files appear 
+        > pic: eject
 */
 
-// (1)
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-// (3)
 const root = ReactDOM.createRoot(document.getElementById('root'))
-
-// (2)
 const element = <h1>Hello World</h1>
-console.log(element) // part of virtual dom: lightweight in memory representation of the UI
 
-// (4)
 root.render(element)
