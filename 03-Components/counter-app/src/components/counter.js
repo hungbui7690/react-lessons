@@ -6,7 +6,6 @@ class Counter extends Component {
     tags: ['tag1', 'tag2', 'tag3'],
   }
 
-  // (1)
   renderTags() {
     if (this.state.tags.length === 0) return <p>There are no tags!</p>
 
@@ -19,9 +18,14 @@ class Counter extends Component {
     )
   }
 
-  // (2)
   render() {
-    return <React.Fragment>{this.renderTags()}</React.Fragment>
+    return (
+      <React.Fragment>
+        {/* (***) */}
+        {this.state.tags.length === 0 && 'Please create a new tag!'}
+        {this.renderTags()}
+      </React.Fragment>
+    )
   }
 }
 
