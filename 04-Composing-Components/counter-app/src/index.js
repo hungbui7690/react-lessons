@@ -1,8 +1,8 @@
 /*
-  Single Source of Truth
-  - now, we want to have the reset buttons, to reset all the value back to zero
+  Removing Local State
+  - Component that does not have Local State, and receive data or ask for data when update from parent is called Controlled Component > is controlled by parent
 
-  (1) counter[s]
+  (1) remove all local state & methods from Counter 
 
 */
 

@@ -11,13 +11,21 @@ class Counters extends Component {
     ],
   }
 
-  // (2) this won't work since we don't have single source of truth > on file Counter, we use the props to initialize of the state, and that just run only once when the counter component is created > after initialize, the state in Counter becomes local state, so we cannot update it anymore > pic
+  // (1) we don't use id in parameter, but use counter > so that we use indexOf() to find ID
+  handleIncrement = (counter) => {
+    const counters = [...this.state.counters] // copy the whole array
+    const index = counters.indexOf(counter) // find the counter we want to update
+    counters[index].value++ // update
+
+    this.setState({ counters }) // let react update for us
+  }
+
   handleReset = () => {
     const counters = this.state.counters.map((c) => {
       c.value = 0
       return c
     })
-    this.setState({ counters }) // overwrite
+    this.setState({ counters })
   }
 
   handleDelete = (counterId) => {
@@ -29,7 +37,6 @@ class Counters extends Component {
   render() {
     return (
       <div>
-        {/* (1) */}
         <button
           onClick={this.handleReset}
           className='btn btn-primary btn-sm m-2'
@@ -42,6 +49,7 @@ class Counters extends Component {
               <Counter
                 key={counter.id}
                 onDelete={this.handleDelete}
+                onIncrement={this.handleIncrement} // (2)
                 counter={counter}
               />
             )
