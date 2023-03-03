@@ -16,9 +16,11 @@ class Counters extends Component {
       <div>
         <div>
           {this.state.counters.map((counter) => {
-            // (1) pass data > go to counter.jsx
             return (
-              <Counter key={counter.id} value={counter.value} selected={true} />
+              <Counter key={counter.id} value={counter.value}>
+                {/* (1) h4 is in between Counter opening and closing tags  */}
+                <h4>Counter #${counter.id}</h4>
+              </Counter>
             )
           })}
         </div>

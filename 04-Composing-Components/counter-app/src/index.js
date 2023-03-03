@@ -1,8 +1,8 @@
 /*
-  Passing Data to Components
+  Passing Children
+  - sometimes, we need to pass something inside the open and closing tags 
 
-  (1) counter[s].jsx
-
+  (1) counter[s]
 */
 
 import React from 'react'
