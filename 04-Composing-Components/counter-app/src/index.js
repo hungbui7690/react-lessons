@@ -1,13 +1,9 @@
 /*
-  Multiple Components in Sync > pic
-  - now, we want to have:
-    App
-      Navbar (bootstrap)
-      Counters
-        Counter
+  Lifting State UP
 
-  (0) Create /components/navbar.jsx
+  (1) move all states and methods from Counters to App & fix the errors
 
+  > at this time, the Counter[s] component becomes Controlled component
 */
 
 import React from 'react'
@@ -18,9 +14,4 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
-// (1)
-root.render(
-  //<React.StrictMode>
-  <App />
-  //</React.StrictMode>
-)
+root.render(<App />)

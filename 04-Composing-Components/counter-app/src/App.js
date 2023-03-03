@@ -1,18 +1,55 @@
+import { Component } from 'react'
 import './App.css'
 import Counters from './components/counters'
 import Navbar from './components/navbar'
 
-function App() {
-  // (3) now, we want to display the number of counters which has value > 0 in the navbar > right now we have 4 counters, and 3 of them are greater 0
-  // check the picture, we see that Navbar and Counter[s] are children of App > both of them do not have relationship > in this case, we need to lift the state up from Counter[s] to App, so that we can pass the states to all children
-  return (
-    <>
-      <Navbar />
-      <main className='container'>
-        <Counters />
-      </main>
-    </>
-  )
+class App extends Component {
+  state = {
+    counters: [
+      { id: 1, value: 5 },
+      { id: 2, value: 3 },
+      { id: 3, value: 1 },
+      { id: 4, value: 0 },
+    ],
+  }
+
+  handleIncrement = (counter) => {
+    const counters = [...this.state.counters]
+    const index = counters.indexOf(counter)
+    counters[index].value++
+
+    this.setState({ counters })
+  }
+
+  handleReset = () => {
+    const counters = this.state.counters.map((c) => {
+      c.value = 0
+      return c
+    })
+    this.setState({ counters })
+  }
+
+  handleDelete = (counterId) => {
+    const counters = this.state.counters.filter((c) => c.id !== counterId)
+
+    this.setState({ counters })
+  }
+
+  render() {
+    return (
+      <>
+        <Navbar />
+        <main className='container'>
+          <Counters
+            counters={this.state.counters} // (***)
+            onReset={this.handleReset}
+            onDelete={this.handleDelete}
+            onIncrement={this.handleIncrement}
+          />
+        </main>
+      </>
+    )
+  }
 }
 
 export default App
