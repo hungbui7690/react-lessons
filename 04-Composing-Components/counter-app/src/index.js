@@ -1,7 +1,7 @@
 /*
-  Stateless Functional Components
-  - Navbar component does not have any calculation > just have render() > we don't have any event handler or helper methods to calculate values > also don't have state > in this situation, we can convert it into "SFC"
+  Destructuring Arguments
 
+  (1) Navbar.jsx
 
 */
 

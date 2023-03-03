@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-// (***) shot-cut=sfc > use props in param + remove "this" in sfc
-const Navbar = (props) => {
+// (1)
+const Navbar = ({ totalCounters }) => {
   return (
     <nav className='navbar navbar-light bg-light'>
       <div className='container-fluid'>
@@ -9,7 +9,8 @@ const Navbar = (props) => {
         <a href='#' className='navbar-brand'>
           Navbar
           <span className='badge badge-pill badge-secondary'>
-            {props.totalCounters}
+            {/* (2) go to Counter[s] and do the same */}
+            {totalCounters}
           </span>
         </a>
       </div>
