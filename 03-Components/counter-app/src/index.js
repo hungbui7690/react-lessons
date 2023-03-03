@@ -1,6 +1,9 @@
 /*
-  EMBEDDED EXPRESSIONS
+  Setting Attributes
   (1) counter.jsx
+
+  (***) page not auto refresh:
+    > create .env > FAST_REFRESH=false
 
 */
 
