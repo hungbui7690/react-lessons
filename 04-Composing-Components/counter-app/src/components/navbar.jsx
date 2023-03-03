@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 
-// (1)
 const Navbar = ({ totalCounters }) => {
+  // (4)
+  console.log('> Navbar - render')
+
   return (
     <nav className='navbar navbar-light bg-light'>
       <div className='container-fluid'>
@@ -9,7 +11,6 @@ const Navbar = ({ totalCounters }) => {
         <a href='#' className='navbar-brand'>
           Navbar
           <span className='badge badge-pill badge-secondary'>
-            {/* (2) go to Counter[s] and do the same */}
             {totalCounters}
           </span>
         </a>
