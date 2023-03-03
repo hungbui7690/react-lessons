@@ -1,7 +1,8 @@
 /*
-  Lifting State UP
+  Stateless Functional Components
+  - Navbar component does not have any calculation > just have render() > we don't have any event handler or helper methods to calculate values > also don't have state > in this situation, we can convert it into "SFC"
 
-  (1) now we need to find the length of the counters which have value > 0
+
 */
 
 import React from 'react'
