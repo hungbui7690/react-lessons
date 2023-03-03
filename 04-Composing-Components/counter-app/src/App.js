@@ -13,20 +13,21 @@ class App extends Component {
     ],
   }
 
-  constructor(props) {
-    super(props)
-    console.log('App - constructor ', this.props)
-  }
+  // (***) previous version
+  // handleIncrement = (counter) => {
+  //   const counters = [...this.state.counters]
+  //   const index = counters.indexOf(counter)
+  //   counters[index].value++
 
-  componentDidMount() {
-    console.log('App - Mounted')
-  }
+  //   this.setState({ counters })
+  // }
 
+  // (***) correct version
   handleIncrement = (counter) => {
-    const counters = [...this.state.counters]
+    const counters = [...this.state.counters] // copy the array first
     const index = counters.indexOf(counter)
-    counters[index].value++
-
+    counters[index] = { ...counter } // copy the object inside the array > previous version misses this step
+    counters[index].value++ // increase the value
     this.setState({ counters })
   }
 
@@ -45,8 +46,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('App - render')
-
     const total = this.state.counters.filter((c) => c.value > 0).length
     return (
       <>

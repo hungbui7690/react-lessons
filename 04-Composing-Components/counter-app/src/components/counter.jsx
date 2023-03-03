@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 
 class Counter extends Component {
-  render() {
-    console.log('>> Counter - render')
+  // (***) this function is called after the component is updated > we will have new states & new props > based on this, we can decide we should make an AJAX call or not > this is an optimization technique
+  componentDidUpdate(prevProps, prevState) {
+    console.log('prevProps', prevProps.counter)
+    console.log('prevState', prevState)
+    console.log('***************')
+  }
 
+  render() {
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
