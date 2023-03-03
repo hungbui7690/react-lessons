@@ -1,13 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { getMovies } from '../services/fakeMovieService'
 
 class Movies extends Component {
-  // (1)
   state = {
     movies: getMovies(),
   }
 
-  // (2)
+  // (3)
+  handleDelete = (movie) => {
+    const movies = this.state.movies.filter((m) => m._id !== movie._id)
+    this.setState({ movies })
+  }
+
   render() {
     return (
       <table className='table'>
@@ -17,6 +21,9 @@ class Movies extends Component {
             <th>Genre</th>
             <th>Stock</th>
             <th>Rate</th>
+
+            {/* (1) add an empty column in header */}
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -27,6 +34,16 @@ class Movies extends Component {
                 <td>{m.genre.name}</td>
                 <td>{m.numberInStock}</td>
                 <td>{m.dailyRentalRate}</td>
+
+                {/* (2) create delete button + add event */}
+                <th>
+                  <button
+                    onClick={() => this.handleDelete(m)}
+                    className='btn btn-danger btn-sm'
+                  >
+                    Delete
+                  </button>
+                </th>
               </tr>
             )
           })}

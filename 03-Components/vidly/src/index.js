@@ -1,11 +1,6 @@
 /*
-  Exercise:
-  - pic: exercise > build movies component
-
-/////////////////////////////////////////////////
-
-  Building the Movies Component
-  (1) movies.jsx
+  Deleting a Movie
+    (1) movies.jsx
 
 */
 
