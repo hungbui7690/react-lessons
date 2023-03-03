@@ -1,16 +1,17 @@
 /*
-  ARROW FUNCTION
+  ARROW FUNCTION & "THIS"
 */
 
-const jobs = [
-  { id: 1, isActive: true },
-  { id: 2, isActive: false },
-  { id: 3, isActive: true },
-]
+const person = {
+  talk() {
+    console.log('this-1: ', this)
 
-const activeJobs = jobs.filter(function (job) {
-  return job.isActive
-})
+    // (***) using normal function here
+    setTimeout(function () {
+      console.log('this-2: ', this)
+    })
+  },
+}
 
-// (***) easy to read > just read from left to right
-const activeJobsX = jobs.filter((job) => job.isActive)
+// because we call person.talk(), but we don't call person.setTimeout() > window
+person.talk() // this-1 === person, this-2 === window
