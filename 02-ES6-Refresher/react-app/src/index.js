@@ -1,17 +1,27 @@
 /*
   ARROW FUNCTION & "THIS"
+  > arrow function does not have its own "this" keyword
 */
 
+// Solution 1
 const person = {
   talk() {
-    console.log('this-1: ', this)
-
-    // (***) using normal function here
+    const self = this // (1)
     setTimeout(function () {
-      console.log('this-2: ', this)
+      console.log('self:', self) // (2)
     })
   },
 }
 
-// because we call person.talk(), but we don't call person.setTimeout() > window
-person.talk() // this-1 === person, this-2 === window
+// Solution 2
+const personX = {
+  walk() {
+    // (***) use arrow function > "this" keyword of arrow function will inherits the context of surrounding scope
+    setTimeout(() => {
+      console.log('this:', this)
+    })
+  },
+}
+
+person.talk() // person
+personX.walk() // personX
