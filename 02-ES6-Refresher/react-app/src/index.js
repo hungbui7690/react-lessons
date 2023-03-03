@@ -1,15 +1,16 @@
 /*
-  OBJECTS
+  "THIS" KEYWORD
 */
 
 const person = {
   name: 'Joe',
-  walk: function () {},
-  talk() {}, // es6
+  walk: function () {
+    console.log(this)
+  },
 }
+person.walk() // ref to person
 
-person.talk()
-person['name'] = ''
+///////////////////////////
 
-const target = 'name'
-person[target] = 'John'
+const walk = person.walk
+walk() // window, but in strict mode = undefined
