@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Counter from './counter'
 
 class Counters extends Component {
-  // (1)
   state = {
     counters: [
       { id: 1, value: 5 },
@@ -15,10 +14,12 @@ class Counters extends Component {
   render() {
     return (
       <div>
-        {/* (2) though it is dynamic, but the values are still zero for all counters > next lecture */}
         <div>
           {this.state.counters.map((counter) => {
-            return <Counter />
+            // (1) pass data > go to counter.jsx
+            return (
+              <Counter key={counter.id} value={counter.value} selected={true} />
+            )
           })}
         </div>
       </div>
