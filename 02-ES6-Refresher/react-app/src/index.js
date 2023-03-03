@@ -2,14 +2,15 @@
   ARROW FUNCTION
 */
 
-const square = function (number) {
-  return number * number
-}
+const jobs = [
+  { id: 1, isActive: true },
+  { id: 2, isActive: false },
+  { id: 3, isActive: true },
+]
 
-// (***)
-const squareX = (number) => {
-  return number * number
-}
+const activeJobs = jobs.filter(function (job) {
+  return job.isActive
+})
 
-// (***)
-const squareY = (number) => number * number
+// (***) easy to read > just read from left to right
+const activeJobsX = jobs.filter((job) => job.isActive)
