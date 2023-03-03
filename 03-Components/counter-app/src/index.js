@@ -1,10 +1,8 @@
 /*
-  Setting Attributes
+  Rendering Classes Dynamically
   (1) counter.jsx
 
-  (***) page not auto refresh:
-    > create .env > FAST_REFRESH=false
-
+  (***) if we want to create method in a class > select the lines that we want to be in that method > Refactor > Extract to method...
 */
 
 import React from 'react'
