@@ -1,5 +1,13 @@
 /*
-  Updating the State
+  What Happens When We Click on Increase Button?
+  > call setState()
+  > and setState() will trigger render() > render() is async > we just know that it will be called in the future
+  > render will check in virtual dom, and identify the changes > then update the real dom 
+  > check pic
+
+////////////////////////////////////////
+
+  Passing Event Arguments
   (1) counter.jsx
 
 */
