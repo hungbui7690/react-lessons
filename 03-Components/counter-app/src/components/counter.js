@@ -5,15 +5,9 @@ class Counter extends Component {
     count: 0,
   }
 
-  // (1)
   handleIncrement = (product) => {
     console.log(product)
     this.setState({ count: this.state.count + 1 }) // we cannot use ++ here
-  }
-
-  // (2) this is solution 1
-  doHandleIncrement = () => {
-    this.handleIncrement({ id: 1 })
   }
 
   render() {
@@ -21,9 +15,9 @@ class Counter extends Component {
       <React.Fragment>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
 
-        {/* (3) For example, we need to pass arg here > we need to pass a function ref  */}
+        {/* (***) Solution 2: better  */}
         <button
-          onClick={this.doHandleIncrement}
+          onClick={() => this.handleIncrement({ id: 1 })}
           className='btn btn-secondary btn-sm'
         >
           Increment
