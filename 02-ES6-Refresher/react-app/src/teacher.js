@@ -1,6 +1,10 @@
-import { Person } from './person'
+import Person from './person'
 
-export class Teacher extends Person {
+// named export > now, outside can see these 2
+export function promote() {}
+export function remote() {}
+
+export default class Teacher extends Person {
   constructor(name, degree) {
     super(name)
     this.degree = degree
