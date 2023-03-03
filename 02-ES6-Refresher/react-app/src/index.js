@@ -1,17 +1,15 @@
 /*
-  BINDING "THIS" KEYWORD
+  ARROW FUNCTION
 */
 
-const person = {
-  name: 'Joe',
-  walk: function () {
-    console.log(this)
-  },
+const square = function (number) {
+  return number * number
 }
-person.walk() // ref to person
 
-///////////////////////////
+// (***)
+const squareX = (number) => {
+  return number * number
+}
 
-// (***) functions are objects > can use call
-const walk = person.walk.bind(person)
-walk() // ref to person
+// (***)
+const squareY = (number) => number * number
