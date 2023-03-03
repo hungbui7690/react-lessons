@@ -2,15 +2,25 @@ import React, { Component } from 'react'
 import Counter from './counter'
 
 class Counters extends Component {
-  state = {}
+  // (1)
+  state = {
+    counters: [
+      { id: 1, value: 5 },
+      { id: 2, value: 3 },
+      { id: 3, value: 1 },
+      { id: 4, value: 0 },
+    ],
+  }
+
   render() {
-    // (1) each component is isolated from each other
     return (
       <div>
-        <Counter />
-        <Counter />
-        <Counter />
-        <Counter />
+        {/* (2) though it is dynamic, but the values are still zero for all counters > next lecture */}
+        <div>
+          {this.state.counters.map((counter) => {
+            return <Counter />
+          })}
+        </div>
       </div>
     )
   }
