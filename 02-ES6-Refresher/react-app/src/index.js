@@ -1,21 +1,15 @@
 /*
-  LET 
-  - block scope
-
-  CONST 
-  - block scope
-  - constant
-
-  > prefer "const" rather than "let"
+  OBJECTS
 */
 
-const x = 1
-// x = 2
-
-function sayHello() {
-  for (let i = 0; i < 5; i++) {
-    console.log(i)
-  }
+const person = {
+  name: 'Joe',
+  walk: function () {},
+  talk() {}, // es6
 }
 
-sayHello()
+person.talk()
+person['name'] = ''
+
+const target = 'name'
+person[target] = 'John'
