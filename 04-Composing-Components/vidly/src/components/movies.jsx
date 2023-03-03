@@ -12,7 +12,6 @@ class Movies extends Component {
     this.setState({ movies })
   }
 
-  // (***) add param to define which movie we click
   handleLike = (movie) => {
     console.log(movie)
 

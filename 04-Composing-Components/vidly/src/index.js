@@ -1,9 +1,6 @@
 /*
   Vidly Exercise:
-  - check pic
-  - build reusable "Like" component > use font-awesome@4.7.0 > search for heart
-
-  (1) movies.jsx
+  - check the liked component > it does not have any state or calculation > just display the data that get from props > sfc
 
 */
 
