@@ -11,9 +11,11 @@ class Counters extends Component {
     ],
   }
 
-  // (1) add id
+  // (1) we don't update directly, but create a new array without the deleted element > then let react update for us
   handleDelete = (counterId) => {
-    console.log('Event Handler Called', counterId)
+    const counters = this.state.counters.filter((c) => c.id !== counterId)
+
+    this.setState({ counters })
   }
 
   render() {
@@ -25,8 +27,7 @@ class Counters extends Component {
               <Counter
                 key={counter.id}
                 onDelete={this.handleDelete}
-                value={counter.value}
-                id={counter.id} // (2) go to Counter.jsx
+                counter={counter} // (2) instead passing value and id separately, we pass the whole counter
               />
             )
           })}
