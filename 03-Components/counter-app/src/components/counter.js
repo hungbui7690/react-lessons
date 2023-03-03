@@ -5,18 +5,9 @@ class Counter extends Component {
     count: 0,
   }
 
-  // (***)
-  constructor() {
-    super()
-    console.log('Constructor :>> ', this) // point to Counter {} > not undefined at this point
-    this.handleIncrement = this.handleIncrement.bind(this) // because not undefined at this point > it's a good change to reset this keyword
-  }
-
-  // (***)
-  // obj.method > obj
-  // function() > window > undefined in strict mode
-  handleIncrement() {
-    console.log('Increment Clicked', this) // Counter {}, since we reset this keyword in constructor function
+  // (***) Another method is to use arrow function
+  handleIncrement = () => {
+    console.log('Increment Clicked', this)
   }
 
   render() {
