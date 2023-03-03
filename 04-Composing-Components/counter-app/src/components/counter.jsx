@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 
 class Counter extends Component {
   componentDidUpdate(prevProps, prevState) {
-    console.log('prevProps', prevProps.counter.value)
-    console.log('this.props', this.props.counter.value)
-    console.log('***************')
-
-    // (***)
     if (prevProps.counter.value !== this.props.counter.value) {
       console.log('> Making AJAX call')
     }
+  }
+
+  // (***) we can see that app will re-render first, then this method will be called > with this methods, we can use to cleanup "listener", "setTimeout"...to prevent memory leaks
+  componentWillUnmount() {
+    console.log('> Unmount - Counter')
   }
 
   render() {

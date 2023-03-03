@@ -1,11 +1,7 @@
 /*
-  Updating Phase
+  Unmounting Phase
 
-  (***) in this lecture, we learn how to compare values of previous state/props (b4 update) vs current state/props (after update)
-
-  (1) Counter.jsx
-
-  
+  (1) Counter.js
 */
 import React from 'react'
 import ReactDOM from 'react-dom/client'

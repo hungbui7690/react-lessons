@@ -36,6 +36,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('[App] - render')
     const total = this.state.counters.filter((c) => c.value > 0).length
     return (
       <>
