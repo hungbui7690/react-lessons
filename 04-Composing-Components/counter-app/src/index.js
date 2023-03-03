@@ -1,22 +1,26 @@
 /*
-  Removing Local State
-  - Component that does not have Local State, and receive data or ask for data when update from parent is called Controlled Component > is controlled by parent
+  Multiple Components in Sync > pic
+  - now, we want to have:
+    App
+      Navbar (bootstrap)
+      Counters
+        Counter
 
-  (1) remove all local state & methods from Counter 
+  (0) Create /components/navbar.jsx
 
 */
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-// import App from './App'
+import App from './App'
 import 'bootstrap/dist/css/bootstrap.css'
-import Counters from './components/counters'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
+// (1)
 root.render(
-  // <React.StrictMode>
-  <Counters />
-  // </React.StrictMode>
+  //<React.StrictMode>
+  <App />
+  //</React.StrictMode>
 )

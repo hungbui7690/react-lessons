@@ -11,13 +11,12 @@ class Counters extends Component {
     ],
   }
 
-  // (1) we don't use id in parameter, but use counter > so that we use indexOf() to find ID
   handleIncrement = (counter) => {
-    const counters = [...this.state.counters] // copy the whole array
-    const index = counters.indexOf(counter) // find the counter we want to update
-    counters[index].value++ // update
+    const counters = [...this.state.counters]
+    const index = counters.indexOf(counter)
+    counters[index].value++
 
-    this.setState({ counters }) // let react update for us
+    this.setState({ counters })
   }
 
   handleReset = () => {
@@ -49,7 +48,7 @@ class Counters extends Component {
               <Counter
                 key={counter.id}
                 onDelete={this.handleDelete}
-                onIncrement={this.handleIncrement} // (2)
+                onIncrement={this.handleIncrement}
                 counter={counter}
               />
             )
