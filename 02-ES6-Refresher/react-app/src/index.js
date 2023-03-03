@@ -1,5 +1,5 @@
 /*
-  "THIS" KEYWORD
+  BINDING "THIS" KEYWORD
 */
 
 const person = {
@@ -12,5 +12,6 @@ person.walk() // ref to person
 
 ///////////////////////////
 
-const walk = person.walk
-walk() // window, but in strict mode = undefined
+// (***) functions are objects > can use call
+const walk = person.walk.bind(person)
+walk() // ref to person
