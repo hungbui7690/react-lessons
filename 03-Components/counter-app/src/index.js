@@ -1,5 +1,5 @@
 /*
-  Conditional Rendering
+  Handling Events
   (1) counter.jsx
 
 */
