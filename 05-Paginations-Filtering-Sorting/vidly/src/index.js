@@ -1,8 +1,9 @@
 /*
-  Vidly: Component Interface
-  - Build the interface of Pagination Component
+  Vidly: Display Pages
+  - use bootstrap > pic
 
   (1) common/pagination.jsx
+
 */
 
 import React from 'react'

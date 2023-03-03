@@ -6,7 +6,7 @@ import Pagination from './common/pagination'
 class Movies extends Component {
   state = {
     movies: getMovies(),
-    pageSize: 4, // (2a)
+    pageSize: 4,
   }
 
   handleDelete = (movie) => {
@@ -25,7 +25,6 @@ class Movies extends Component {
     this.setState({ movies })
   }
 
-  // (3) page = pageNumber
   handlePageChange = (page) => {
     console.log(page)
   }
@@ -73,7 +72,6 @@ class Movies extends Component {
           </tbody>
         </table>
 
-        {/* (2b) we need to think about the input that we need to pass to the Pagination component > in this case, they are: Total Movies & Page Size  */}
         <Pagination
           itemsCount={count}
           pageSize={this.state.pageSize}
