@@ -1,13 +1,21 @@
 /*
-  VAR
-  - function scope
+  LET 
+  - block scope
+
+  CONST 
+  - block scope
+  - constant
+
+  > prefer "const" rather than "let"
 */
 
+const x = 1
+// x = 2
+
 function sayHello() {
-  for (var i = 0; i < 5; i++) {
+  for (let i = 0; i < 5; i++) {
     console.log(i)
   }
-  console.log(i) // var: function scope
 }
 
 sayHello()
