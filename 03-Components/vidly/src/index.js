@@ -1,7 +1,6 @@
 /*
-  Deleting a Movie
+  Conditional Rendering
     (1) movies.jsx
-
 */
 
 import React from 'react'
