@@ -3,24 +3,20 @@ import React, { Component } from 'react'
 class Counter extends Component {
   state = {
     count: 0,
-    tags: ['tag1', 'tag2', 'tag3'],
   }
 
-  renderTags() {
-    if (this.state.tags.length === 0) return <p>There are no tags!</p>
-
-    return (
-      <ul>
-        {this.state.tags.map((tag) => (
-          <li key={tag}>{tag}</li>
-        ))}
-      </ul>
-    )
+  // (***)
+  constructor() {
+    super()
+    console.log('Constructor :>> ', this) // point to Counter {} > not undefined at this point
+    this.handleIncrement = this.handleIncrement.bind(this) // because not undefined at this point > it's a good change to reset this keyword
   }
 
-  // (1) naming convention: handleST
+  // (***)
+  // obj.method > obj
+  // function() > window > undefined in strict mode
   handleIncrement() {
-    console.log('Increment Clicked', this) // undefined > why? > next lecture
+    console.log('Increment Clicked', this) // Counter {}, since we reset this keyword in constructor function
   }
 
   render() {

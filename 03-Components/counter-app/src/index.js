@@ -1,5 +1,5 @@
 /*
-  Handling Events
+  Binding Event Handlers
   (1) counter.jsx
 
 */
