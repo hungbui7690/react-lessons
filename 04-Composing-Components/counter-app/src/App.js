@@ -13,16 +13,6 @@ class App extends Component {
     ],
   }
 
-  // (***) previous version
-  // handleIncrement = (counter) => {
-  //   const counters = [...this.state.counters]
-  //   const index = counters.indexOf(counter)
-  //   counters[index].value++
-
-  //   this.setState({ counters })
-  // }
-
-  // (***) correct version
   handleIncrement = (counter) => {
     const counters = [...this.state.counters] // copy the array first
     const index = counters.indexOf(counter)

@@ -1,8 +1,10 @@
 /*
   Updating Phase
 
-  (***) check the increment() in App.js > we can see that the previous version makes the prevProps returns current value 
-  
+  (***) in this lecture, we learn how to compare values of previous state/props (b4 update) vs current state/props (after update)
+
+  (1) Counter.jsx
+
   
 */
 import React from 'react'

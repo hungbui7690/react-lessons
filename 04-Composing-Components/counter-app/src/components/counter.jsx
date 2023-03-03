@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 
 class Counter extends Component {
-  // (***) this function is called after the component is updated > we will have new states & new props > based on this, we can decide we should make an AJAX call or not > this is an optimization technique
   componentDidUpdate(prevProps, prevState) {
-    console.log('prevProps', prevProps.counter)
-    console.log('prevState', prevState)
+    console.log('prevProps', prevProps.counter.value)
+    console.log('this.props', this.props.counter.value)
     console.log('***************')
+
+    // (***)
+    if (prevProps.counter.value !== this.props.counter.value) {
+      console.log('> Making AJAX call')
+    }
   }
 
   render() {
