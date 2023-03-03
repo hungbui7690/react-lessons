@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 const Navbar = ({ totalCounters }) => {
-  // (4)
   console.log('> Navbar - render')
 
   return (

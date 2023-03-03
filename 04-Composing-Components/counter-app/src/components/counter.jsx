@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 class Counter extends Component {
   render() {
-    // (6)
     console.log('>> Counter - render')
 
     return (
