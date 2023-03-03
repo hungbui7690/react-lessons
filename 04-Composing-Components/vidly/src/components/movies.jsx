@@ -12,9 +12,16 @@ class Movies extends Component {
     this.setState({ movies })
   }
 
-  // (2) go to like.jsx
-  handleLike = () => {
-    console.log('Like Clicked')
+  // (***) add param to define which movie we click
+  handleLike = (movie) => {
+    console.log(movie)
+
+    const movies = [...this.state.movies]
+    const index = movies.indexOf(movie)
+    movies[index] = { ...movies[index] }
+    movies[index].liked = !movies[index].liked
+
+    this.setState({ movies })
   }
 
   render() {
@@ -43,20 +50,18 @@ class Movies extends Component {
                   <td>{m.genre.name}</td>
                   <td>{m.numberInStock}</td>
                   <td>{m.dailyRentalRate}</td>
-
                   <td>
-                    {/* (1) click event */}
-                    <Like onClick={this.handleLike} liked={m.liked} />
+                    {/* (2) */}
+                    <Like onClick={() => this.handleLike(m)} liked={m.liked} />
                   </td>
-
-                  <th>
+                  <td>
                     <button
                       onClick={() => this.handleDelete(m)}
                       className='btn btn-danger btn-sm'
                     >
                       Delete
                     </button>
-                  </th>
+                  </td>
                 </tr>
               )
             })}

@@ -3,7 +3,8 @@
   - check pic
   - build reusable "Like" component > use font-awesome@4.7.0 > search for heart
 
-  (1) create /components/common/: this is the folder where we put all the reusable components (pagination, like, table, form....)
+  (1) movies.jsx
+
 */
 
 import React from 'react'
