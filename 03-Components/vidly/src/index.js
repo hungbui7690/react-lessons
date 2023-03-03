@@ -5,10 +5,7 @@
 /////////////////////////////////////////////////
 
   Building the Movies Component
-
-  (1) create /components/movies.jsx
-    > pic: table-bootstrap
-
+  (1) movies.jsx
 
 */
 

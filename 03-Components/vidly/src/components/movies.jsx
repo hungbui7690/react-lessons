@@ -1,10 +1,38 @@
 import React, { Component } from 'react'
+import { getMovies } from '../services/fakeMovieService'
 
-// (1) go to App.js
 class Movies extends Component {
-  state = {}
+  // (1)
+  state = {
+    movies: getMovies(),
+  }
+
+  // (2)
   render() {
-    return <h2>Movies Component</h2>
+    return (
+      <table className='table'>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Stock</th>
+            <th>Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.state.movies.map((m) => {
+            return (
+              <tr key={m._id}>
+                <td>{m.title}</td>
+                <td>{m.genre.name}</td>
+                <td>{m.numberInStock}</td>
+                <td>{m.dailyRentalRate}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    )
   }
 }
 
