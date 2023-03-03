@@ -1,30 +1,8 @@
 /*
-  INHERITANCE
+  MODULE
 */
 
-class Person {
-  constructor(name) {
-    this.name = name
-  }
+import { Teacher } from './teacher'
 
-  walk() {
-    console.log('walk')
-  }
-}
-
-// (1)
-class Teacher extends Person {
-  // (2)
-  constructor(name, degree) {
-    super(name) // (***) if not user super() > error
-    this.degree = degree
-  }
-
-  teach() {
-    console.log('teach')
-  }
-}
-
-// teacher now have properties & methods of Person class
 const teacher = new Teacher('Joe', 'MS')
 teacher.walk()
