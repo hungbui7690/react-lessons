@@ -1,5 +1,5 @@
 /*
-  SPECIFYING CHILDREN
+  EMBEDDED EXPRESSIONS
   (1) counter.jsx
 
 */
