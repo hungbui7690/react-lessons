@@ -7,7 +7,10 @@ class Navbar extends Component {
         <div className='container-fluid'>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a href='#' className='navbar-brand'>
-            Navbar
+            Navbar {/* (3) */}
+            <span className='badge badge-pill badge-secondary'>
+              {this.props.totalCounters}
+            </span>
           </a>
         </div>
       </nav>

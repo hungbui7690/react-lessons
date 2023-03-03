@@ -1,9 +1,7 @@
 /*
   Lifting State UP
 
-  (1) move all states and methods from Counters to App & fix the errors
-
-  > at this time, the Counter[s] component becomes Controlled component
+  (1) now we need to find the length of the counters which have value > 0
 */
 
 import React from 'react'

@@ -36,12 +36,15 @@ class App extends Component {
   }
 
   render() {
+    // (1)
+    const total = this.state.counters.filter((c) => c.value > 0).length
     return (
       <>
-        <Navbar />
+        {/* (2) */}
+        <Navbar totalCounters={total} />
         <main className='container'>
           <Counters
-            counters={this.state.counters} // (***)
+            counters={this.state.counters}
             onReset={this.handleReset}
             onDelete={this.handleDelete}
             onIncrement={this.handleIncrement}
