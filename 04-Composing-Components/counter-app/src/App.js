@@ -13,6 +13,15 @@ class App extends Component {
     ],
   }
 
+  // (2)
+  handleDecrement = (counter) => {
+    const counters = [...this.state.counters]
+    const index = counters.indexOf(counter)
+    counters[index] = { ...counter }
+    counters[index].value--
+    this.setState({ counters })
+  }
+
   handleIncrement = (counter) => {
     const counters = [...this.state.counters] // copy the array first
     const index = counters.indexOf(counter)
@@ -36,7 +45,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('[App] - render')
     const total = this.state.counters.filter((c) => c.value > 0).length
     return (
       <>
@@ -47,6 +55,7 @@ class App extends Component {
             onReset={this.handleReset}
             onDelete={this.handleDelete}
             onIncrement={this.handleIncrement}
+            onDecrement={this.handleDecrement} // (3) go to Counter[s].jsx
           />
         </main>
       </>
