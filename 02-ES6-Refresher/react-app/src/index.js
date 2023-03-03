@@ -1,16 +1,19 @@
 /*
-  OBJECT DESTRUCTURING
+  SPREAD OPERATOR
 */
 
-const address = {
-  street: '',
-  city: '',
-  country: '',
-}
+const first = [1, 2, 3]
+const second = [4, 5, 6]
 
-// const street = address.street
-// const city = address.city
-// const country = address.country
+// combine
+const combined = first.concat(second)
+const combinedX = [...first, 7, ...second]
 
-// (***)
-const { street: st, city, country } = address
+console.log('combined: ', combined)
+console.log('combinedX: ', combinedX)
+
+//////////////////////////////////
+
+// cloned
+const cloned = [...first]
+console.log('cloned: ', cloned)
