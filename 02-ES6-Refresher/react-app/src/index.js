@@ -2,18 +2,13 @@
   SPREAD OPERATOR
 */
 
-const first = [1, 2, 3]
-const second = [4, 5, 6]
+const first = { name: 'Joe' }
+const second = { job: 'Developer' }
 
-// combine
-const combined = first.concat(second)
-const combinedX = [...first, 7, ...second]
-
-console.log('combined: ', combined)
-console.log('combinedX: ', combinedX)
-
-//////////////////////////////////
+// combined
+const combined = { ...first, ...second, location: 'City X' }
+console.log('combined :>> ', combined)
 
 // cloned
-const cloned = [...first]
-console.log('cloned: ', cloned)
+const cloned = { ...first }
+console.log('cloned :>> ', cloned)
